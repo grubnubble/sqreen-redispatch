@@ -12,6 +12,6 @@ def test_notify():
 	assert response.status_code == 200
 	assert response.data == data
 
-def test_notify_fails_appropriately():
+def test_notify_fails_with_bad_signature():
 	response = client.post("notify")
 	assert response.status_code == 400

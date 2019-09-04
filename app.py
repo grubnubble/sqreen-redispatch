@@ -4,8 +4,6 @@ import sqreen
 sqreen.start()
 app = Flask(__name__)
 
-
-
 @app.route('/')
 def hello():
 	return 'hello, world!'
@@ -15,7 +13,10 @@ def notify():
 	if request.data:
 		# simple check to keep in mind that we 
 		# 	need to validate the request in some way
-		print request.data
+		app.logger.info("Notification from Sqreen: %s", request.data)
 		return request.data
 	else:
 		return 'bad request!', 400
+
+if __name__ == '__main__':
+	app.run(debug=True)

@@ -6,6 +6,10 @@ The app that Sqreen is monitoring is itself.
 ## Setup
 You will need to install `pytest`. I'm using version 4.6.4.
 
+You will also need to provide a phone number including the country code 
+in the `PHONE` variable in `app.py` in order to recieve SMS messages
+when Sqreen webhook notifications are fired.
+
 ## Run
 `$ flask run`
 
